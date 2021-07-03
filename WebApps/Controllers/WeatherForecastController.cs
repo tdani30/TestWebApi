@@ -14,6 +14,7 @@ namespace WebApps.Controllers
         private static readonly string[] Summaries = new[]
         {
             "LPC TALHA", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
