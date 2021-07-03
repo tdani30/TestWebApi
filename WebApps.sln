@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps", "WebApps\WebApps.csproj", "{10F4FCDD-EF0F-42B0-9540-CDF4BE8B6B2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{32B59E17-FDD9-486A-8DEE-E21EC12F18E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Domain", "Domain\WebApi.Domain\WebApi.Domain.csproj", "{951DA89C-B692-4524-82BC-052D0725096C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6D8293D0-2B2F-4C3B-A129-BA156D584C7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceInterfaces", "ServiceInterfaces", "{B1236BAA-04E6-4B08-AEC5-E8E24DB62690}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{70FF806B-0480-4433-B443-16727E656CE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Infrastructure", "Infrastructure\WebApi.Infrastructure\WebApi.Infrastructure.csproj", "{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Interfaces", "ServiceInterfaces\WebApi.Interfaces\WebApi.Interfaces.csproj", "{50FA695B-1CE5-4FE3-BE64-259AF7A0D029}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Services", "Services\WebApi.Services\WebApi.Services.csproj", "{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10F4FCDD-EF0F-42B0-9540-CDF4BE8B6B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F4FCDD-EF0F-42B0-9540-CDF4BE8B6B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F4FCDD-EF0F-42B0-9540-CDF4BE8B6B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F4FCDD-EF0F-42B0-9540-CDF4BE8B6B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951DA89C-B692-4524-82BC-052D0725096C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951DA89C-B692-4524-82BC-052D0725096C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951DA89C-B692-4524-82BC-052D0725096C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951DA89C-B692-4524-82BC-052D0725096C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FA695B-1CE5-4FE3-BE64-259AF7A0D029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FA695B-1CE5-4FE3-BE64-259AF7A0D029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FA695B-1CE5-4FE3-BE64-259AF7A0D029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FA695B-1CE5-4FE3-BE64-259AF7A0D029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{951DA89C-B692-4524-82BC-052D0725096C} = {32B59E17-FDD9-486A-8DEE-E21EC12F18E9}
+		{E74ACF90-06B1-4EED-9BA9-5BF4DB356C28} = {6D8293D0-2B2F-4C3B-A129-BA156D584C7D}
+		{50FA695B-1CE5-4FE3-BE64-259AF7A0D029} = {B1236BAA-04E6-4B08-AEC5-E8E24DB62690}
+		{7AC1D6EE-F6DB-49A3-A750-E8F4A0104030} = {70FF806B-0480-4433-B443-16727E656CE6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8416B231-690A-492C-98BB-24958FA361E0}
+	EndGlobalSection
+EndGlobal
