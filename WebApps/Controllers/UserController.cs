@@ -8,7 +8,6 @@ using WebApi.Interfaces;
 
 namespace WebApps.Controllers
 {
-   //[Route("api/[controller]")]
     [ApiController]
     public class UserController : SmControllerBase
     {
@@ -41,7 +40,7 @@ namespace WebApps.Controllers
         }
 
         [HttpGet]
-        [Route("api/Candidate/GetCandidate")]
+        [Route("api/User/GetCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -63,7 +62,7 @@ namespace WebApps.Controllers
         }
 
         [HttpGet]
-        [Route("api/Candidate/DeleteCandidate")]
+        [Route("api/User/DeleteCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -86,7 +85,7 @@ namespace WebApps.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("api/Candidate/Authenticate")]
+        [Route("api/User/Authenticate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -114,7 +113,7 @@ namespace WebApps.Controllers
         }
 
         [HttpPost]
-        [Route("api/Candidate/UpdateCandidate")]
+        [Route("api/User/UpdateCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -140,7 +139,7 @@ namespace WebApps.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        [Route("api/Candidate/CreateCandidate")]
+        [Route("api/User/CreateCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]

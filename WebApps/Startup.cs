@@ -37,15 +37,7 @@ namespace WebApps
 
             });
 
-            var connectionString = Configuration.GetConnectionString("DotNetCoreConnection");
             services.AddDbContext<CandidateDbContext>();
-            //services.AddDbContext<CandidateDbContext>(options =>
-            //                                                options.UseSqlServer(connectionString,
-            //                                                                     sqlServerOptions =>
-            //                                                                     {
-            //                                                                         sqlServerOptions.CommandTimeout(90);
-            //                                                                     }));
-
 
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
