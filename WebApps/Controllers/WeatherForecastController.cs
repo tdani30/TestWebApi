@@ -13,7 +13,7 @@ namespace WebApps.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "LPC TALHA", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "LPC TALHA"
 
         };
 
