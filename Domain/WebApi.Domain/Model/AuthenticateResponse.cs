@@ -15,7 +15,7 @@ namespace WebApi.Domain.Model
 
         public AuthenticateResponse(Candidate user, string token)
         {
-            Id = user.id;
+            Id = user.ID;
             FullName = user.FullName;
             Username = user.Username;
             Email = user.Email;

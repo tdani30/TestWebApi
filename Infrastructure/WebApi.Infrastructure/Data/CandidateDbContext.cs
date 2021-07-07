@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using System.IO;
 using WebApi.Domain.Entities;
 
 namespace WebApi.Infrastructure.Data
@@ -15,9 +17,10 @@ namespace WebApi.Infrastructure.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionstr = "Server = tcp:bclpc.database.windows.net,1433; Initial Catalog = TestDB; Persist Security Info = False; User ID = talha; Password = Test@123; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
-            optionsBuilder.UseSqlServer(connectionstr);
-           
+            IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json")
+               .Build();
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DotNetCoreConnection"));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

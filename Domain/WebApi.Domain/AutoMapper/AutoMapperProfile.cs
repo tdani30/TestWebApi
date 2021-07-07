@@ -11,8 +11,8 @@ namespace WebApi.Domain.AutoMapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<Candidates, Candidate>();
-            CreateMap<Candidate,Candidates>();
+            this.CreateMap<Candidates, Candidate>().ReverseMap();
+           // this.CreateMap<Candidate,Candidates>();
         }
     }
 }

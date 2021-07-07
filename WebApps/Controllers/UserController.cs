@@ -143,7 +143,7 @@ namespace WebApps.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        public async Task<IActionResult> CreateCandidate(Candidate model)
+        public async Task<IActionResult> CreateCandidate([FromBody] Candidate model)
         {
             try
             {

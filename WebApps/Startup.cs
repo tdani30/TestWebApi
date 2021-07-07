@@ -31,11 +31,14 @@ namespace WebApps
             services.AddControllers();
             services.AddLoggers(Configuration);
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(MyAllowSpecificOrigins, options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
-            });
+            services.AddCors(o => o.AddPolicy(MyAllowSpecificOrigins, builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
 
             services.AddDbContext<CandidateDbContext>();
 
@@ -43,6 +46,8 @@ namespace WebApps
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+            services.AddCors();
+            services.AddAutoMapper(typeof(Startup));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             DependancyConfig dependency = new DependancyConfig(services, Configuration);
             dependency.ConfigureServices();
@@ -51,6 +56,7 @@ namespace WebApps
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(MyAllowSpecificOrigins);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

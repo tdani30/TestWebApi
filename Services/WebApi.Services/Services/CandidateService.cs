@@ -34,27 +34,28 @@ namespace WebApi.Services.Services
 
         public async Task<Candidate> CreateCandidate(Candidate dto)
         {
-            var dataToSave=_mapper.Map<Candidates>(dto);
+            var dataToSave=_mapper.Map<Candidates>((Candidate)dto);
             dataToSave.CreatedBy = AdminName;
             dataToSave.CreatedDate = DateTime.Now;
             dataToSave.ID = Guid.NewGuid().ToString();
+            dto.ID = dataToSave.ID;
             _CandidateRepository.Add(dataToSave);
             await _unitofWork.CommitAsync();
             return dto;
         }
         public async Task<Candidate> UpdateCandidate(Candidate data)
         {
-            var find = await _CandidateRepository.GetAsync(e => e.ID == data.id);
+            var find = await _CandidateRepository.GetAsync(e => e.ID == data.ID);
             if (find != null)
             {
 
                 find.FullName = data.FullName;
-                find.Mobile = data.mobile;
-                find.Age = data.age;
+                find.Mobile = data.Mobile;
+                find.Age = data.Age;
                 find.Email = data.Email;
                 find.Username = data.Username;
                 find.Password = data.Password;
-                find.Address = data.address;
+                find.Address = data.Address;
                 find.UpdatedDate = DateTime.Now;
                 find.UpdatedBy = AdminName;
 
@@ -83,16 +84,8 @@ namespace WebApi.Services.Services
 
         public async Task<List<Candidate>> GetAll()
         {
-            try
-            {
                 var user = await Task.Run(() => _CandidateRepository.GetAll().ToListAsync());
                 return _mapper.Map<List<Candidate>>(user);
-
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
         }
 
         public async Task<Candidate> GetById(string id)
@@ -129,7 +122,7 @@ namespace WebApi.Services.Services
             var key = Encoding.ASCII.GetBytes(_JWTSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.id.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("ID", user.ID.ToString()) }),
                 Expires = DateTime.UtcNow.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
