@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApps.DependencyConfig;
 using WebApi.Infrastructure.Data;
+using WebApi.Domain.Model;
 
 namespace WebApps
 {
@@ -38,7 +39,8 @@ namespace WebApps
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
+            // configure strongly typed settings object
+            services.Configure<JWTSetting>(Configuration.GetSection("JWTSetting"));
 
             services.AddDbContext<CandidateDbContext>();
 

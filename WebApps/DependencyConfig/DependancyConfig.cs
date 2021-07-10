@@ -33,6 +33,7 @@ namespace WebApps.DependencyConfig
 
             _services.AddScoped<ICandidateRepository, CandidatesRepositories>();
 
+
         }
     }
 }
