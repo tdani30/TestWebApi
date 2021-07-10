@@ -8,7 +8,9 @@ using WebApi.Interfaces;
 
 namespace WebApps.Controllers
 {
+    [Authorize]
     [ApiController]
+    [Route("[controller]")]
     public class UserController : SmControllerBase
     {
         ICandidatesService _candidatesService;
@@ -18,7 +20,7 @@ namespace WebApps.Controllers
         }
 
         [HttpGet]
-        [Route("api/User/GetAllCandidate")]
+        [Route("GetAllCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -40,7 +42,7 @@ namespace WebApps.Controllers
         }
 
         [HttpGet]
-        [Route("api/User/GetCandidate")]
+        [Route("GetCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -62,7 +64,7 @@ namespace WebApps.Controllers
         }
 
         [HttpGet]
-        [Route("api/User/DeleteCandidate")]
+        [Route("DeleteCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -85,7 +87,7 @@ namespace WebApps.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("api/User/Authenticate")]
+        [Route("Authenticate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -113,7 +115,7 @@ namespace WebApps.Controllers
         }
 
         [HttpPost]
-        [Route("api/User/UpdateCandidate")]
+        [Route("UpdateCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -139,7 +141,7 @@ namespace WebApps.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        [Route("api/User/CreateCandidate")]
+        [Route("CreateCandidate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
@@ -163,7 +165,6 @@ namespace WebApps.Controllers
                 return HandleOtherException(ex);
             }
         }
-
 
     }
 }

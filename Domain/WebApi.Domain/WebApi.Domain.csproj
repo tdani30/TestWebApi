@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="SD.BuildingBlocks.Infrastructure" Version="1.0.0" />
   </ItemGroup>
 
